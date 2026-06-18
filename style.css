@@ -1,5 +1,4 @@
-
-:root {
+v:root {
     --bg-color: #1a1a2e;
     --card-color: #16213e;
     --accent-color: #0f3460;
@@ -71,28 +70,38 @@ p {
     transform: translateY(-2px);
 }
 
-.btn:active {
-    transform: translateY(1px);
-}
-
-/* Progress Tracking */
+/* --- PROGRESS & SCORE TRACKING STYLES --- */
 #progress-container {
     width: 100%;
-    background-color: #0f1123;
-    height: 10px;
-    border-radius: 5px;
     margin-bottom: 25px;
+}
+
+.header-status {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    font-size: 1rem;
+    margin-bottom: 8px;
+    color: #a0aec0;
+}
+
+#progress-background {
+    width: 100%;
+    background-color: #0f1123;
+    height: 14px;
+    border-radius: 7px;
+    overflow: hidden;
 }
 
 #progress-bar {
     height: 100%;
     background-color: var(--success-color);
-    width: 0%;
-    border-radius: 5px;
+    width: 0%; /* JavaScript controls this width dynamically */
+    border-radius: 7px;
     transition: width 0.4s ease-in-out;
 }
 
-/* Audio Player styling */
+/* --- AUDIO PLAYER --- */
 #audio-container {
     background-color: rgba(15, 52, 96, 0.4);
     padding: 15px;
@@ -109,7 +118,7 @@ audio {
     width: 100%;
 }
 
-/* Forms & Inputs */
+/* --- INPUTS & UTILITIES --- */
 .input-container {
     margin: 25px 0;
     display: flex;
@@ -126,7 +135,6 @@ input[type="text"] {
     color: white;
     outline: none;
     text-align: center;
-    transition: border-color 0.2s;
 }
 
 input[type="text"]:focus {
@@ -141,21 +149,6 @@ input[type="text"]:focus {
 
 .correct { color: var(--success-color); }
 .incorrect { color: var(--text-color); }
+
+/* The vital display toggle engine class */
 .hidden { display: none !important; }
-
-/* Layout for the score and progress text alignment */
-.header-status {
-    display: flex;
-    justify-content: space-between;
-    font-weight: bold;
-    font-size: 0.9rem;
-    margin-bottom: 5px;
-    color: #a0aec0;
-}
-
-#progress-background {
-    width: 100%;
-    background-color: #0f1123;
-    height: 10px;
-    border-radius: 5px;
-}
