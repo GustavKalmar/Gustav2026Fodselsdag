@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Scavenger Hunt</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            text-align: center;
+            padding: 20px;
+        }
+
+        input {
+            padding: 10px;
+            width: 200px;
+        }
+
+        button {
+            padding: 10px 20px;
+        }
+
+        #message {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<h1>🕵️ Scavenger Hunt</h1>
+
+<p id="clue">
+What animal says "moo"?
+</p>
+
+<input id="answer" placeholder="Your answer">
+<button onclick="checkAnswer()">Submit</button>
+
+<p id="message"></p>
+
+<script>
+function checkAnswer() {
+    let answer =
+        document.getElementById("answer")
+        .value
+        .toLowerCase();
+
+    if(answer === "cow") {
+        document.getElementById("clue").innerHTML =
+            "Correct! Next clue: What has keys but can't open locks?";
+        document.getElementById("message").innerText = "";
+    } else {
+        document.getElementById("message").innerText =
+            "Try again!";
+    }
+}
+</script>
+
+</body>
+</html>
