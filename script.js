@@ -156,5 +156,4 @@ function resetGame() {
     victoryScreen.classList.add('hidden');
     welcomeScreen.classList.remove('hidden');
 }
-.incorrect { color: var(--text-color); }
-.hidden { display: none !important; }
+
