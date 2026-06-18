@@ -142,3 +142,20 @@ input[type="text"]:focus {
 .correct { color: var(--success-color); }
 .incorrect { color: var(--text-color); }
 .hidden { display: none !important; }
+
+/* Layout for the score and progress text alignment */
+.header-status {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+    color: #a0aec0;
+}
+
+#progress-background {
+    width: 100%;
+    background-color: #0f1123;
+    height: 10px;
+    border-radius: 5px;
+}
