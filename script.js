@@ -1,143 +1,160 @@
-:root {
-    --bg-color: #1a1a2e;
-    --card-color: #16213e;
-    --accent-color: #0f3460;
-    --text-color: #e94560;
-    --light-text: #ffffff;
-    --success-color: #4cd137;
+// ----------------------------------------------------
+// 🎯 CUSTOMIZE YOUR QUESTIONS, ANSWERS & AUDIO HERE
+// ----------------------------------------------------
+const quizData = [
+    {
+        title: "Clue 1: The Code Riddle",
+        question: "I speak without a mouth and hear without ears. I have no body, but I come alive with wind. What am I? (Hint: Lowercase)",
+        answer: "echo",
+        audio: "" // Leave blank if you don't want music on this slide
+    },
+    {
+        title: "Clue 2: Audio Identifier",
+        question: "Listen to the music snippet below. What classic game console boot sound is this?",
+        answer: "playstation",
+        audio: "audio/ps1.mp3" // Put your mp3 inside an 'audio' folder in your repo
+    },
+    {
+        title: "Clue 3: The Secret Vault",
+        question: "Solve the math equation to unlock the coordinates: What is (12 * 4) - 6?",
+        answer: "42",
+        audio: ""
+    }
+];
+
+// ----------------------------------------------------
+// ⚙️ GAME ENGINE (No need to edit below unless curious)
+// ----------------------------------------------------
+let currentSlide = 0;
+
+// DOM Elements
+const welcomeScreen = document.getElementById('welcome-screen');
+const quizScreen = document.getElementById('quiz-screen');
+const victoryScreen = document.getElementById('victory-screen');
+const progressContainer = document.getElementById('progress-container');
+const progressBar = document.getElementById('progress-bar');
+
+const startBtn = document.getElementById('start-btn');
+const submitBtn = document.getElementById('submit-btn');
+const restartBtn = document.getElementById('restart-btn');
+
+const slideTitle = document.getElementById('slide-title');
+const questionText = document.getElementById('question-text');
+const audioContainer = document.getElementById('audio-container');
+const gameAudio = document.getElementById('game-audio');
+const audioSource = document.getElementById('audio-source');
+const answerInput = document.getElementById('answer-input');
+const feedbackMessage = document.getElementById('feedback-message');
+
+// Event Listeners
+startBtn.addEventListener('click', startGame);
+submitBtn.addEventListener('click', checkAnswer);
+restartBtn.addEventListener('click', resetGame);
+answerInput.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') checkAnswer();
+});
+
+function startGame() {
+    welcomeScreen.classList.add('hidden');
+    quizScreen.classList.remove('hidden');
+    progressContainer.classList.remove('hidden');
+    currentSlide = 0;
+    loadSlide();
 }
 
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: var(--bg-color);
-    color: var(--light-text);
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    padding: 20px;
-    box-sizing: border-box;
+function loadSlide() {
+    const currentData = quizData[currentSlide];
+    
+    // Set text elements
+    slideTitle.innerText = currentData.title;
+    questionText.innerText = currentData.question;
+    
+    // Clear old feedback and inputs
+    answerInput.value = "";
+    feedbackMessage.innerText = "";
+    feedbackMessage.className = "";
+
+    // Handle Audio Engine
+    if (currentData.audio && currentData.audio !== "") {
+        audioSource.src = currentData.audio;
+        gameAudio.load(); // Reload the audio engine with new source
+        audioContainer.classList.remove('hidden');
+    } else {
+        gameAudio.pause();
+        audioContainer.classList.add('hidden');
+    }
+
+    updateProgressBar();
 }
 
-.game-container {
-    background-color: var(--card-color);
-    padding: 40px;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-    width: 100%;
-    max-width: 600px;
-    text-align: center;
-    border: 2px solid var(--accent-color);
-    position: relative;
-    overflow: hidden;
+function checkAnswer() {
+    const userAnswer = answerInput.value.trim().toLowerCase();
+    const correctAnswer = quizData[currentSlide].answer.trim().toLowerCase();
+
+    if (userAnswer === correctAnswer) {
+        // Trigger intermediate celebration confetti
+        confetti({
+            particleCount: 40,
+            spread: 60,
+            origin: { y: 0.8 }
+        });
+
+        currentSlide++;
+
+        if (currentSlide < quizData.length) {
+            feedbackMessage.className = "correct";
+            feedbackMessage.innerText = "Correct! Moving to next clue...";
+            // Brief pause before sliding to next question
+            setTimeout(loadSlide, 1200);
+        } else {
+            showVictory();
+        }
+    } else {
+        feedbackMessage.className = "incorrect";
+        feedbackMessage.innerText = "❌ That's not it! Try analyzing the clue again.";
+        // Shake input effect
+        answerInput.classList.add('shake');
+        setTimeout(() => answerInput.classList.remove('shake'), 500);
+    }
 }
 
-h1, h2 {
-    color: var(--text-color);
-    margin-top: 0;
+function updateProgressBar() {
+    const percentage = (currentSlide / quizData.length) * 100;
+    progressBar.style.width = `${percentage}%`;
 }
 
-p {
-    font-size: 1.1rem;
-    line-height: 1.6;
+function showVictory() {
+    quizScreen.classList.add('hidden');
+    progressContainer.classList.add('hidden');
+    victoryScreen.classList.remove('hidden');
+    
+    // Big victory confetti explosion loop
+    let duration = 4 * 1000;
+    let end = Date.now() + duration;
+
+    (function frame() {
+        confetti({
+            particleCount: 5,
+            angle: 60,
+            spread: 55,
+            origin: { x: 0 }
+        });
+        confetti({
+            particleCount: 5,
+            angle: 120,
+            spread: 55,
+            origin: { x: 1 }
+        });
+
+        if (Date.now() < end) {
+            requestAnimationFrame(frame);
+        }
+    }());
 }
 
-.game-img {
-    width: 100%;
-    max-height: 250px;
-    object-fit: cover;
-    border-radius: 8px;
-    margin: 20px 0;
-    border: 1px solid var(--accent-color);
+function resetGame() {
+    victoryScreen.classList.add('hidden');
+    welcomeScreen.classList.remove('hidden');
 }
-
-.btn {
-    background-color: var(--text-color);
-    color: white;
-    border: none;
-    padding: 12px 30px;
-    font-size: 1rem;
-    font-weight: bold;
-    border-radius: 25px;
-    cursor: pointer;
-    transition: transform 0.2s, background-color 0.2s;
-    box-shadow: 0 4px 15px rgba(233, 69, 96, 0.4);
-}
-
-.btn:hover {
-    background-color: #ff527b;
-    transform: translateY(-2px);
-}
-
-.btn:active {
-    transform: translateY(1px);
-}
-
-/* Progress Tracking */
-#progress-container {
-    width: 100%;
-    background-color: #0f1123;
-    height: 10px;
-    border-radius: 5px;
-    margin-bottom: 25px;
-}
-
-#progress-bar {
-    height: 100%;
-    background-color: var(--success-color);
-    width: 0%;
-    border-radius: 5px;
-    transition: width 0.4s ease-in-out;
-}
-
-/* Audio Player styling */
-#audio-container {
-    background-color: rgba(15, 52, 96, 0.4);
-    padding: 15px;
-    border-radius: 10px;
-    margin: 20px 0;
-}
-
-.audio-hint {
-    margin-top: 0;
-    font-weight: bold;
-}
-
-audio {
-    width: 100%;
-}
-
-/* Forms & Inputs */
-.input-container {
-    margin: 25px 0;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-input[type="text"] {
-    padding: 12px 20px;
-    font-size: 1rem;
-    border-radius: 25px;
-    border: 2px solid var(--accent-color);
-    background-color: #0f1123;
-    color: white;
-    outline: none;
-    text-align: center;
-    transition: border-color 0.2s;
-}
-
-input[type="text"]:focus {
-    border-color: var(--text-color);
-}
-
-#feedback-message {
-    font-weight: bold;
-    min-height: 24px;
-    margin-top: 10px;
-}
-
-.correct { color: var(--success-color); }
 .incorrect { color: var(--text-color); }
 .hidden { display: none !important; }
