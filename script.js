@@ -1,18 +1,15 @@
-// ----------------------------------------------------
-// 🎯 CUSTOMIZE YOUR QUESTIONS, ANSWERS & AUDIO HERE
-// ----------------------------------------------------
 const quizData = [
     {
         title: "Clue 1: The Code Riddle",
         question: "I speak without a mouth and hear without ears. I have no body, but I come alive with wind. What am I? (Hint: Lowercase)",
         answer: "echo",
-        audio: "" // Leave blank if you don't want music on this slide
+        audio: "" 
     },
     {
         title: "Clue 2: Audio Identifier",
         question: "Listen to the music snippet below. What classic game console boot sound is this?",
         answer: "playstation",
-        audio: "audio/ps1.mp3" // Put your mp3 inside an 'audio' folder in your repo
+        audio: "audio/ps1.mp3" 
     },
     {
         title: "Clue 3: The Secret Vault",
@@ -22,9 +19,6 @@ const quizData = [
     }
 ];
 
-// ----------------------------------------------------
-// ⚙️ GAME ENGINE (No need to edit below unless curious)
-// ----------------------------------------------------
 let currentSlide = 0;
 
 // DOM Elements
@@ -33,6 +27,8 @@ const quizScreen = document.getElementById('quiz-screen');
 const victoryScreen = document.getElementById('victory-screen');
 const progressContainer = document.getElementById('progress-container');
 const progressBar = document.getElementById('progress-bar');
+const scoreCounter = document.getElementById('score-counter');
+const finalScoreText = document.getElementById('final-score-text');
 
 const startBtn = document.getElementById('start-btn');
 const submitBtn = document.getElementById('submit-btn');
@@ -65,19 +61,16 @@ function startGame() {
 function loadSlide() {
     const currentData = quizData[currentSlide];
     
-    // Set text elements
     slideTitle.innerText = currentData.title;
     questionText.innerText = currentData.question;
     
-    // Clear old feedback and inputs
     answerInput.value = "";
     feedbackMessage.innerText = "";
     feedbackMessage.className = "";
 
-    // Handle Audio Engine
     if (currentData.audio && currentData.audio !== "") {
         audioSource.src = currentData.audio;
-        gameAudio.load(); // Reload the audio engine with new source
+        gameAudio.load(); 
         audioContainer.classList.remove('hidden');
     } else {
         gameAudio.pause();
@@ -92,7 +85,6 @@ function checkAnswer() {
     const correctAnswer = quizData[currentSlide].answer.trim().toLowerCase();
 
     if (userAnswer === correctAnswer) {
-        // Trigger intermediate celebration confetti
         confetti({
             particleCount: 40,
             spread: 60,
@@ -104,7 +96,6 @@ function checkAnswer() {
         if (currentSlide < quizData.length) {
             feedbackMessage.className = "correct";
             feedbackMessage.innerText = "Correct! Moving to next clue...";
-            // Brief pause before sliding to next question
             setTimeout(loadSlide, 1200);
         } else {
             showVictory();
@@ -112,13 +103,16 @@ function checkAnswer() {
     } else {
         feedbackMessage.className = "incorrect";
         feedbackMessage.innerText = "❌ That's not it! Try analyzing the clue again.";
-        // Shake input effect
         answerInput.classList.add('shake');
         setTimeout(() => answerInput.classList.remove('shake'), 500);
     }
 }
 
 function updateProgressBar() {
+    // Update numerical indicator text
+    scoreCounter.innerText = `Score: ${currentSlide} / ${quizData.length}`;
+    
+    // Update structural width
     const percentage = (currentSlide / quizData.length) * 100;
     progressBar.style.width = `${percentage}%`;
 }
@@ -128,24 +122,15 @@ function showVictory() {
     progressContainer.classList.add('hidden');
     victoryScreen.classList.remove('hidden');
     
-    // Big victory confetti explosion loop
+    // Set the final summary score text dynamically
+    finalScoreText.innerHTML = `You successfully cracked all the codes!<br><strong>Final Score: ${currentSlide} / ${quizData.length} ⭐</strong>`;
+    
     let duration = 4 * 1000;
     let end = Date.now() + duration;
 
     (function frame() {
-        confetti({
-            particleCount: 5,
-            angle: 60,
-            spread: 55,
-            origin: { x: 0 }
-        });
-        confetti({
-            particleCount: 5,
-            angle: 120,
-            spread: 55,
-            origin: { x: 1 }
-        });
-
+        confetti({ particleCount: 5, angle: 60, spread: 55, origin: { x: 0 } });
+        confetti({ particleCount: 5, angle: 120, spread: 55, origin: { x: 1 } });
         if (Date.now() < end) {
             requestAnimationFrame(frame);
         }
@@ -156,4 +141,3 @@ function resetGame() {
     victoryScreen.classList.add('hidden');
     welcomeScreen.classList.remove('hidden');
 }
-
