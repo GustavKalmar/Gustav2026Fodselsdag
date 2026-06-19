@@ -129,7 +129,7 @@ function loadQuestion() {
     const targetCategoryQuestions = categoriesData[activeCategoryName];
     const currentQuestionData = targetCategoryQuestions[currentQuestionIndex];
 
-    categoryIndicator.innerText = `📂 Category: ${activeCategoryName}`;
+    categoryIndicator.innerText = `Kategori: ${activeCategoryName}`;
     document.getElementById('slide-title').innerText = `${currentQuestionData.title} (${currentQuestionIndex + 1}/${targetCategoryQuestions.length})`;
     document.getElementById('question-text').innerText = currentQuestionData.question;
     
@@ -177,7 +177,7 @@ function checkAnswer() {
         }
     } else {
         feedbackMessage.className = "incorrect";
-        feedbackMessage.innerText = "❌ Incorrect answer. Keep analyzing the clues!";
+        feedbackMessage.innerText = "Svaret var desværre forkert... Prøv igen";
     }
 }
 
@@ -201,7 +201,7 @@ function unlockCategoryBreak() {
         quizScreen.classList.remove('hidden');
         loadQuestion();
     } else {
-        breakFeedback.innerText = "❌ Master Key invalid. Ask your Game Master for the correct bypass phrase!";
+        breakFeedback.innerText = "Kode var desværre forkert... Prøv igen";
     }
 }
 
@@ -240,7 +240,7 @@ function passQuestion() {
 
     if (currentQuestionIndex < currentCategoryQuestions.length) {
         feedbackMessage.className = "incorrect";
-        feedbackMessage.innerText = "Question skipped! Moving forward...";
+        feedbackMessage.innerText = "Spørgsmål skipped...";
         setTimeout(loadQuestion, 1000);
     } else {
         // Category finished via a pass! Check if it was the final category
