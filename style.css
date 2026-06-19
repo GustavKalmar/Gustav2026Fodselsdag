@@ -20,6 +20,10 @@ body {
     box-sizing: border-box;
 }
 
+#category-indicator {
+    color: #f1c40f;
+    font-weight: bold;
+}
 .game-container {
     background-color: var(--card-color);
     padding: 40px;
