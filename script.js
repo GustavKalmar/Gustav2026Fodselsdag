@@ -88,6 +88,7 @@ const feedbackMessage = document.getElementById('feedback-message');
 const breakFeedback = document.getElementById('break-feedback');
 const answerInput = document.getElementById('answer-input');
 const breakCodeInput = document.getElementById('break-code-input');
+const passBtn = document.getElementById('pass-btn');
 
 totalQuestionsCount = Object.values(categoriesData).reduce((acc, cat) => acc + cat.length, 0);
 
@@ -103,6 +104,7 @@ document.querySelectorAll('.team-btn').forEach(button => {
 document.getElementById('submit-btn').addEventListener('click', checkAnswer);
 document.getElementById('unlock-btn').addEventListener('click', unlockCategoryBreak);
 document.getElementById('restart-btn').addEventListener('click', resetGame);
+passBtn.addEventListener('click', passQuestion);
 answerInput.addEventListener('keypress', (e) => { if (e.key === 'Enter') checkAnswer(); });
 breakCodeInput.addEventListener('keypress', (e) => { if (e.key === 'Enter') unlockCategoryBreak(); });
 
@@ -227,4 +229,25 @@ function showVictory() {
 function resetGame() {
     victoryScreen.classList.add('hidden');
     welcomeScreen.classList.remove('hidden');
+}
+// Paste at the very bottom of script.js
+function passQuestion() {
+    const activeCategoryName = categoryOrder[currentCategoryIndex];
+    const currentCategoryQuestions = categoriesData[activeCategoryName];
+
+    // Move to the next question pointer without increasing totalCorrectAnswers
+    currentQuestionIndex++;
+
+    if (currentQuestionIndex < currentCategoryQuestions.length) {
+        feedbackMessage.className = "incorrect";
+        feedbackMessage.innerText = "Question skipped! Moving forward...";
+        setTimeout(loadQuestion, 1000);
+    } else {
+        // Category finished via a pass! Check if it was the final category
+        if (currentCategoryIndex + 1 < categoryOrder.length) {
+            setTimeout(showCategoryBreakScreen, 1000);
+        } else {
+            setTimeout(showVictory, 1000);
+        }
+    }
 }
