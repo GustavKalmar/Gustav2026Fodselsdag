@@ -30,7 +30,7 @@ const quizData = [
         audio: ""
     },
     {
-        title: "Clue 3: The Secret Vault",
+        title: "5.1: Nemt, de sagde",
         question: "Solve the math equation to unlock the coordinates: What is (12 * 4) - 6?",
         answer: "42",
         audio: ""
