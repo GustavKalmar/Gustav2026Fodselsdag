@@ -1,8 +1,6 @@
 // ==========================================
 // 🛠️ CUSTOMIZABLE CATEGORIES & QUESTIONS DATA
 // ==========================================
-// 5 Categories, each with exactly 10 questions. 
-// Change the title, question text, and answers to whatever you like!
 const categoriesData = {
     "Riddles": [
         { title: "Riddles - Q1", question: "I speak without a mouth... What am I?", answer: "echo", audio: "" },
@@ -58,4 +56,177 @@ const categoriesData = {
         { title: "Geography - Q3", question: "Placeholder Question 3", answer: "test", audio: "" },
         { title: "Geography - Q4", question: "Placeholder Question 4", answer: "test", audio: "" },
         { title: "Geography - Q5", question: "Placeholder Question 5", answer: "test", audio: "" },
-        { title: "Geography
+        { title: "Geography - Q6", question: "Placeholder Question 6", answer: "test", audio: "" },
+        { title: "Geography - Q7", question: "Placeholder Question 7", answer: "test", audio: "" },
+        { title: "Geography - Q8", question: "Placeholder Question 8", answer: "test", audio: "" },
+        { title: "Geography - Q9", question: "Placeholder Question 9", answer: "test", audio: "" },
+        { title: "Geography - Q10", question: "Final Geography Question!", answer: "test", audio: "" }
+    ]
+};
+
+// 🔑 THE BREAK BYPASS CODES
+const BREAK_UNLOCK_CODES = ["codeone", "codetwo", "codethree", "codefour"];
+
+// ==========================================
+// ⚙️ CATEGORY ENGINE LOGIC (DO NOT DELETE)
+// ==========================================
+let categoryOrder = [];    
+let currentCategoryIndex = 0; 
+let currentQuestionIndex = 0; 
+let totalQuestionsCount = 0;
+let totalCorrectAnswers = 0;
+
+// Gather DOM targets
+const welcomeScreen = document.getElementById('welcome-screen');
+const quizScreen = document.getElementById('quiz-screen');
+const breakScreen = document.getElementById('break-screen');
+const victoryScreen = document.getElementById('victory-screen');
+const progressContainer = document.getElementById('progress-container');
+const progressBar = document.getElementById('progress-bar');
+const scoreCounter = document.getElementById('score-counter');
+const categoryIndicator = document.getElementById('category-indicator');
+const finalScoreText = document.getElementById('final-score-text');
+const feedbackMessage = document.getElementById('feedback-message');
+const breakFeedback = document.getElementById('break-feedback');
+const answerInput = document.getElementById('answer-input');
+const breakCodeInput = document.getElementById('break-code-input');
+
+totalQuestionsCount = Object.values(categoriesData).reduce((acc, cat) => acc + cat.length, 0);
+
+// Set up team selection listeners
+document.querySelectorAll('.team-btn').forEach(button => {
+    button.addEventListener('click', () => {
+        const teamNum = parseInt(button.getAttribute('data-team'), 10);
+        calculateCategoryRotation(teamNum);
+        startGame();
+    });
+});
+
+document.getElementById('submit-btn').addEventListener('click', checkAnswer);
+document.getElementById('unlock-btn').addEventListener('click', unlockCategoryBreak);
+document.getElementById('restart-btn').addEventListener('click', resetGame);
+answerInput.addEventListener('keypress', (e) => { if (e.key === 'Enter') checkAnswer(); });
+breakCodeInput.addEventListener('keypress', (e) => { if (e.key === 'Enter') unlockCategoryBreak(); });
+
+function calculateCategoryRotation(teamNumber) {
+    const keys = Object.keys(categoriesData); 
+    const shift = (teamNumber - 1) % keys.length;
+    categoryOrder = [...keys.slice(shift), ...keys.slice(0, shift)];
+}
+
+function startGame() {
+    welcomeScreen.classList.add('hidden');
+    quizScreen.classList.remove('hidden');
+    progressContainer.classList.remove('hidden');
+    currentCategoryIndex = 0;
+    currentQuestionIndex = 0;
+    totalCorrectAnswers = 0;
+    loadQuestion();
+}
+
+function loadQuestion() {
+    const activeCategoryName = categoryOrder[currentCategoryIndex];
+    const targetCategoryQuestions = categoriesData[activeCategoryName];
+    const currentQuestionData = targetCategoryQuestions[currentQuestionIndex];
+
+    categoryIndicator.innerText = `📂 Category: ${activeCategoryName}`;
+    document.getElementById('slide-title').innerText = `${currentQuestionData.title} (${currentQuestionIndex + 1}/${targetCategoryQuestions.length})`;
+    document.getElementById('question-text').innerText = currentQuestionData.question;
+    
+    answerInput.value = "";
+    feedbackMessage.innerText = "";
+    feedbackMessage.className = "";
+
+    const audioContainer = document.getElementById('audio-container');
+    const gameAudio = document.getElementById('game-audio');
+    if (currentQuestionData.audio && currentQuestionData.audio !== "") {
+        document.getElementById('audio-source').src = currentQuestionData.audio;
+        gameAudio.load();
+        audioContainer.classList.remove('hidden');
+    } else {
+        gameAudio.pause();
+        audioContainer.classList.add('hidden');
+    }
+
+    updateProgressUI();
+}
+
+function checkAnswer() {
+    const activeCategoryName = categoryOrder[currentCategoryIndex];
+    const currentCategoryQuestions = categoriesData[activeCategoryName];
+    const activeQuestion = currentCategoryQuestions[currentQuestionIndex];
+
+    const userAnswer = answerInput.value.trim().toLowerCase();
+    const correctAnswer = activeQuestion.answer.trim().toLowerCase();
+
+    if (userAnswer === correctAnswer) {
+        confetti({ particleCount: 30, spread: 50, origin: { y: 0.8 } });
+        currentQuestionIndex++;
+        totalCorrectAnswers++;
+
+        if (currentQuestionIndex < currentCategoryQuestions.length) {
+            feedbackMessage.className = "correct";
+            feedbackMessage.innerText = "Correct! Loading next clue...";
+            setTimeout(loadQuestion, 1000);
+        } else {
+            if (currentCategoryIndex + 1 < categoryOrder.length) {
+                setTimeout(showCategoryBreakScreen, 1000);
+            } else {
+                setTimeout(showVictory, 1000);
+            }
+        }
+    } else {
+        feedbackMessage.className = "incorrect";
+        feedbackMessage.innerText = "❌ Incorrect answer. Keep analyzing the clues!";
+    }
+}
+
+function showCategoryBreakScreen() {
+    document.getElementById('game-audio').pause();
+    quizScreen.classList.add('hidden');
+    breakScreen.classList.remove('hidden');
+    breakCodeInput.value = "";
+    breakFeedback.innerText = "";
+    updateProgressUI();
+}
+
+function unlockCategoryBreak() {
+    const enteredCode = breakCodeInput.value.trim().toLowerCase();
+    const neededCode = BREAK_UNLOCK_CODES[currentCategoryIndex].toLowerCase();
+
+    if (enteredCode === neededCode) {
+        currentCategoryIndex++;
+        currentQuestionIndex = 0; 
+        breakScreen.classList.add('hidden');
+        quizScreen.classList.remove('hidden');
+        loadQuestion();
+    } else {
+        breakFeedback.innerText = "❌ Master Key invalid. Ask your Game Master for the correct bypass phrase!";
+    }
+}
+
+function updateProgressUI() {
+    scoreCounter.innerText = `Total Score: ${totalCorrectAnswers} / ${totalQuestionsCount}`;
+    const percentage = (totalCorrectAnswers / totalQuestionsCount) * 100;
+    progressBar.style.width = `${percentage}%`;
+}
+
+function showVictory() {
+    quizScreen.classList.add('hidden');
+    progressContainer.classList.add('hidden');
+    victoryScreen.classList.remove('hidden');
+    finalScoreText.innerHTML = `Spectacular achievement! Every single category deciphered successfully!<br><strong>Grand Total: ${totalCorrectAnswers} / ${totalQuestionsCount} ⭐</strong>`;
+    
+    let duration = 6 * 1000;
+    let end = Date.now() + duration;
+    (function frame() {
+        confetti({ particleCount: 4, angle: 60, spread: 55, origin: { x: 0 } });
+        confetti({ particleCount: 4, angle: 120, spread: 55, origin: { x: 1 } });
+        if (Date.now() < end) requestAnimationFrame(frame);
+    }());
+}
+
+function resetGame() {
+    victoryScreen.classList.add('hidden');
+    welcomeScreen.classList.remove('hidden');
+}
