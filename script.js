@@ -104,8 +104,8 @@ function checkAnswer() {
 
     if (userAnswer === correctAnswer) {
         confetti({
-            particleCount: 40,
-            spread: 60,
+            particleCount: 300,
+            spread: 100,
             origin: { y: 0.8 }
         });
 
@@ -120,7 +120,7 @@ function checkAnswer() {
         }
     } else {
         feedbackMessage.className = "incorrect";
-        feedbackMessage.innerText = "❌ That's not it! Try analyzing the clue again.";
+        feedbackMessage.innerText = "øvsi døvsi.. Det var desværre forkrt :(";
         answerInput.classList.add('shake');
         setTimeout(() => answerInput.classList.remove('shake'), 500);
     }
