@@ -33,22 +33,15 @@ body {
     overflow: hidden;
 }
 
-h1, h2 {
-    color: var(--text-color);
-    margin-top: 0;
-}
-
-p {
-    font-size: 1.1rem;
-    line-height: 1.6;
-}
+h1, h2 { color: var(--text-color); margin-top: 0; }
+p { font-size: 1.1rem; line-height: 1.6; }
 
 .game-img {
     width: 100%;
-    max-height: 250px;
+    max-height: 200px;
     object-fit: cover;
     border-radius: 8px;
-    margin: 20px 0;
+    margin: 15px 0;
     border: 1px solid var(--accent-color);
 }
 
@@ -65,90 +58,30 @@ p {
     box-shadow: 0 4px 15px rgba(233, 69, 96, 0.4);
 }
 
-.btn:hover {
-    background-color: #ff527b;
-    transform: translateY(-2px);
-}
+.btn:hover { background-color: #ff527b; transform: translateY(-2px); }
 
-/* --- PROGRESS & SCORE TRACKING STYLES --- */
-#progress-container {
-    width: 100%;
-    margin-bottom: 25px;
-}
+/* Team Selection Styles */
+.team-selection { margin-top: 20px; background: rgba(15, 52, 96, 0.4); padding: 15px; border-radius: 10px;}
+.team-buttons { display: flex; justify-content: center; gap: 15px; margin-top: 10px; }
+.team-btn { padding: 15px 25px; border-radius: 10px; font-size: 1.2rem; }
 
-.header-status {
-    display: flex;
-    justify-content: space-between;
-    font-weight: bold;
-    font-size: 1rem;
-    margin-bottom: 8px;
-    color: #a0aec0;
-}
+/* Progress & Timer styles */
+#progress-container { width: 100%; margin-bottom: 25px; }
+.header-status { display: flex; justify-content: space-between; font-weight: bold; font-size: 1.1rem; margin-bottom: 8px; color: #a0aec0; }
+#timer-counter { color: #f1c40f; }
+#progress-background { width: 100%; background-color: #0f1123; height: 14px; border-radius: 7px; overflow: hidden; }
+#progress-bar { height: 100%; background-color: var(--success-color); width: 0%; border-radius: 7px; transition: width 0.4s ease-in-out; }
 
-#progress-background {
-    width: 100%;
-    background-color: #0f1123;
-    height: 14px;
-    border-radius: 7px;
-    overflow: hidden;
-}
+/* Audio Player */
+#audio-container { background-color: rgba(15, 52, 96, 0.4); padding: 15px; border-radius: 10px; margin: 20px 0; }
+.audio-hint { margin-top: 0; font-weight: bold; }
+audio { width: 100%; }
 
-#progress-bar {
-    height: 100%;
-    background-color: var(--success-color);
-    width: 0%; /* JavaScript controls this width dynamically */
-    border-radius: 7px;
-    transition: width 0.4s ease-in-out;
-}
-
-/* --- AUDIO PLAYER --- */
-#audio-container {
-    background-color: rgba(15, 52, 96, 0.4);
-    padding: 15px;
-    border-radius: 10px;
-    margin: 20px 0;
-}
-
-.audio-hint {
-    margin-top: 0;
-    font-weight: bold;
-}
-
-audio {
-    width: 100%;
-}
-
-/* --- INPUTS & UTILITIES --- */
-.input-container {
-    margin: 25px 0;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-input[type="text"] {
-    padding: 12px 20px;
-    font-size: 1rem;
-    border-radius: 25px;
-    border: 2px solid var(--accent-color);
-    background-color: #0f1123;
-    color: white;
-    outline: none;
-    text-align: center;
-}
-
-input[type="text"]:focus {
-    border-color: var(--text-color);
-}
-
-#feedback-message {
-    font-weight: bold;
-    min-height: 24px;
-    margin-top: 10px;
-}
-
+/* Inputs & Utilities */
+.input-container { margin: 25px 0; display: flex; flex-direction: column; gap: 15px; }
+input[type="text"] { padding: 12px 20px; font-size: 1rem; border-radius: 25px; border: 2px solid var(--accent-color); background-color: #0f1123; color: white; text-align: center; outline: none;}
+input[type="text"]:focus { border-color: var(--text-color); }
+#feedback-message { font-weight: bold; min-height: 24px; }
 .correct { color: var(--success-color); }
 .incorrect { color: var(--text-color); }
-
-/* The vital display toggle engine class */
 .hidden { display: none !important; }
