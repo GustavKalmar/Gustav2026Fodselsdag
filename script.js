@@ -1,22 +1,40 @@
 const quizData = [
     {
-        title: "Clue 1: The Code Riddle",
-        question: "I speak without a mouth and hear without ears. I have no body, but I come alive with wind. What am I? (Hint: Lowercase)",
+        title: "1.1: Gennem årene",
+        question: "e",
         answer: "echo",
         audio: "" 
     },
     {
-        title: "Clue 2: Audio Identifier",
+        title: "2.1: Movie Quotes",
         question: "Listen to the music snippet below. What classic game console boot sound is this?",
         answer: "playstation",
         audio: "audio/ps1.mp3" 
+    },
+    {
+        title: "3.1: Hvad var det?",
+        question: "Hvilken film kommer dette fra",
+        answer: "42",
+        audio: ""
+    },
+    {
+        title: "4.1: Ikke alt",
+        question: "Hvor kommer dette billede fra?",
+        answer: "42",
+        audio: ""
+    },
+    {
+        title: "4.1: AKTIVITET",
+        question: "Hohahe... Nu er I nået til en aktivitet",
+        answer: "42",
+        audio: ""
     },
     {
         title: "Clue 3: The Secret Vault",
         question: "Solve the math equation to unlock the coordinates: What is (12 * 4) - 6?",
         answer: "42",
         audio: ""
-    }
+    },
 ];
 
 let currentSlide = 0;
