@@ -89,3 +89,13 @@ input[type="text"]:focus { border-color: var(--text-color); }
 .correct { color: var(--success-color); }
 .incorrect { color: var(--text-color); }
 .hidden { display: none !important; }
+
+/* Paste at the bottom of style.css */
+.pass-btn-style {
+    background-color: #4a5568 !important;
+    box-shadow: 0 4px 15px rgba(74, 85, 104, 0.4) !important;
+    margin-top: 5px;
+}
+.pass-btn-style:hover {
+    background-color: #718096 !important;
+}
