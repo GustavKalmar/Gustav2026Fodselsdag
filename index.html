@@ -12,7 +12,7 @@
     <div class="game-container">
         <div id="progress-container" class="hidden">
             <div class="header-status">
-                <span>Progress:</span>
+                <span id="timer-counter">⏰ Time Left: --:--</span>
                 <span id="score-counter">Score: 0 / 0</span>
             </div>
             <div id="progress-background">
@@ -21,10 +21,19 @@
         </div>
 
         <div id="welcome-screen" class="screen">
-            <h1>Welcome to the Scavenger Hunt!</h1>
-            <p>Prepare your mind, listen closely, and solve the riddles to find the ultimate treasure.</p>
-            <img id="welcome-image" src="Guizz.jpg" alt="Scavenger Hunt Theme" class="game-img">
-            <button id="start-btn" class="btn">Start Adventure</button>
+            <h1>The Scavenger Hunt</h1>
+            <p>Select your team number to randomize your path and begin the race against time!</p>
+            <img id="welcome-image" src="welcome-banner.jpg" alt="Scavenger Hunt Theme" class="game-img">
+            
+            <div class="team-selection">
+                <p>Choose Your Path / Team:</p>
+                <div class="team-buttons">
+                    <button class="btn team-btn" data-team="1">1</button>
+                    <button class="btn team-btn" data-team="2">2</button>
+                    <button class="btn team-btn" data-team="3">3</button>
+                    <button class="btn team-btn" data-team="4">4</button>
+                </div>
+            </div>
         </div>
 
         <div id="quiz-screen" class="screen hidden">
@@ -35,7 +44,6 @@
                 <p class="audio-hint">🎵 Listen closely to this clue:</p>
                 <audio id="game-audio" controls>
                     <source id="audio-source" src="" type="audio/mpeg">
-                    Your browser does not support the audio element.
                 </audio>
             </div>
 
@@ -46,9 +54,19 @@
             <p id="feedback-message"></p>
         </div>
 
+        <div id="break-screen" class="screen hidden">
+            <h2>⚠️ TIME IS UP! ⚠️</h2>
+            <p>Your screen is locked. Find the game host or discover the hidden override code in the room to continue your quest!</p>
+            <div class="input-container">
+                <input type="text" id="break-code-input" placeholder="Enter bypass code..." autocomplete="off">
+                <button id="unlock-btn" class="btn">Unlock & Resume</button>
+            </div>
+            <p id="break-feedback" class="incorrect"></p>
+        </div>
+
         <div id="victory-screen" class="screen hidden">
-            <h2>🎉 Congratulations! 🎉</h2>
-            <p id="final-score-text">You completed the hunt!</p>
+            <h2>🎉 Victory! 🎉</h2>
+            <p id="final-score-text">You successfully cracked all codes!</p>
             <img src="https://media.giphy.com/media/26tOZ42Mg6pbTUPHW/giphy.gif" alt="Success" class="game-img">
             <button id="restart-btn" class="btn">Play Again</button>
         </div>
