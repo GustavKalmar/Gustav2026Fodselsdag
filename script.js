@@ -25,16 +25,16 @@ const categoriesData = {
         { title: "Hvor kom den lyd fra? - 10", question: "Hvem har lavet denne sang?", answer: "duran duran", audio: "audio/hungrylikethewolftaken.mp3" }
     ],
     "Det var vidst ikke helt alt?": [
-        { title: "Det var vidst ikke helt alt? - 1", question: "What is (12 * 4) - 6?", answer: "42", audio: "" },
-        { title: "Det var vidst ikke helt alt? - 2", question: "Next number in pattern: 2, 4, 8, 16...", answer: "32", audio: "", image: "images/cars.jpg" },
-        { title: "Det var vidst ikke helt alt? - 3", question: "Placeholder Question 3", answer: "test", audio: "", image: "images/cars.jpg" },
-        { title: "Det var vidst ikke helt alt? - 4", question: "Placeholder Question 4", answer: "test", audio: "", image: "images/cars.jpg" },
-        { title: "Det var vidst ikke helt alt? - 5", question: "Placeholder Question 5", answer: "test", audio: "", image: "images/cars.jpg" },
-        { title: "Det var vidst ikke helt alt? - 6", question: "Placeholder Question 6", answer: "test", audio: "", image: "images/cars.jpg" },
-        { title: "Det var vidst ikke helt alt? - 7", question: "Placeholder Question 7", answer: "test", audio: "", image: "images/cars.jpg"},
-        { title: "Det var vidst ikke helt alt? - 8", question: "Placeholder Question 8", answer: "test", audio: "", image: "images/cars.jpg" },
-        { title: "Det var vidst ikke helt alt? - 9", question: "Placeholder Question 9", answer: "test", audio: "", image: "images/cars.jpg" },
-        { title: "Det var vidst ikke helt alt? - 10", question: "Final Math Question!", answer: "test", audio: "", image: "images/cars.jpg" }
+        { title: "Det var vidst ikke helt alt? - 1", question: "Hvilken film er dette?", answer: "vaiana", audio: "", image: "images/vaiana.jpg" },
+        { title: "Det var vidst ikke helt alt? - 2", question: "Hvilken film er dette?", answer: "toy story", audio: "", image: "images/toystory.jpg" },
+        { title: "Det var vidst ikke helt alt? - 3", question: "Hvilken film er dette?", answer: "titanic", audio: "", image: "images/titanic.jpg" },
+        { title: "Det var vidst ikke helt alt? - 4", question: "Hvilken film er dette?", answer: "op", audio: "", image: "images/op.jpg" },
+        { title: "Det var vidst ikke helt alt? - 5", question: "Hvilken film er dette?", answer: "harry potter", audio: "", image: "images/harrypotter.jpg" },
+        { title: "Det var vidst ikke helt alt? - 6", question: "Hvilken film er dette?", answer: "det regner med frikadeller", audio: "", image: "images/detregner.jpg" },
+        { title: "Det var vidst ikke helt alt? - 7", question: "Hvilken film er dette?", answer: "paddington", audio: "", image: "images/paddington.jpg"},
+        { title: "Det var vidst ikke helt alt? - 8", question: "Hvilken film er dette?", answer: "shrek", audio: "", image: "images/shrek.jpg" },
+        { title: "Det var vidst ikke helt alt? - 9", question: "Hvilken film er dette?", answer: "the godfather", audio: "", image: "images/thegodfather.jpg" },
+        { title: "Det var vidst ikke helt alt? - 10", question: "Hvilken film er dette?", answer: "hjem", audio: "", image: "images/hjem.jpg" }
     ],
     "Hvordan i helvede skulle jeg kunne vide det?": [
         { title: "Hvordan i helvede skulle jeg kunne vide det? - 1", question: "Hvor mange sorte tangenter er der på et klaver?", answer: "36", audio: "" },
