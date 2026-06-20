@@ -1,16 +1,16 @@
 
 const categoriesData = {
     "Hvem sagde nu det?": [
-        { title: "Hvem sagde nu det? - 1", question: "I speak without a mouth... What am I?", answer: "echo", audio: "" },
-        { title: "Hvem sagde nu det? - 2", question: "What falls but never breaks?", answer: "night", audio: "" },
-        { title: "Hvem sagde nu det? - 3", question: "Placeholder Question 3", answer: "test", audio: "" },
-        { title: "Hvem sagde nu det? - 4", question: "Placeholder Question 4", answer: "test", audio: "" },
-        { title: "Hvem sagde nu det? - 5", question: "Placeholder Question 5", answer: "test", audio: "" },
-        { title: "Hvem sagde nu det? - 6", question: "Placeholder Question 6", answer: "test", audio: "" },
-        { title: "Hvem sagde nu det? - 7", question: "Placeholder Question 7", answer: "test", audio: "" },
-        { title: "Hvem sagde nu det? - 8", question: "Placeholder Question 8", answer: "test", audio: "" },
-        { title: "Hvem sagde nu det? - 9", question: "Placeholder Question 9", answer: "test", audio: "" },
-        { title: "Hvem sagde nu det? - 10", question: "Final Riddle! What has keys but opens no locks?", answer: "piano", audio: "" }
+        { title: "Hvem sagde nu det? - 1", question: "Man skal ikke tage livet så alvorligt. Ingen kommer levende fra det.", answer: "dirch passer", audio: "" },
+        { title: "Hvem sagde nu det? - 2", question: "Skide godt, Egon (fornavn)", answer: "benny", audio: "" },
+        { title: "Hvem sagde nu det? - 3", question: "Bob bob bob bob bob? (fornavn)", answer: "benny", audio: "" },
+        { title: "Hvem sagde nu det? - 4", question: "Syg i hovedet. Det er dig der er syg i hovedet", answer: "ingeborg skjern", audio: "" },
+        { title: "Hvem sagde nu det? - 5", question: "Hvad siger hun, misser", answer: "tante møghe", audio: "" },
+        { title: "Hvem sagde nu det? - 6", question: "No, i am youy father", answer: "darth vader", audio: "" },
+        { title: "Hvem sagde nu det? - 7", question: "Life was like a box of chocolate", answer: "forrest gump", audio: "" },
+        { title: "Hvem sagde nu det? - 8", question: "That's not a knife, this is a knife", answer: "mick dundee", audio: "" },
+        { title: "Hvem sagde nu det? - 9", question: "Say hello to my little friend (fornavn)", answer: "tony", audio: "" },
+        { title: "Hvem sagde nu det? - 10", question: "Are you not entertained? (fornavn)", answer: "maximus", audio: "" }
     ],
     "Hvor kom den lyd fra?": [
         { title: "Hvor kom den lyd fra? - 1", question: "Fra hvilken film kommer denne sang fra?", answer: "biler", audio: "audio/Lyd1_guizz.mp3" },
