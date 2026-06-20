@@ -129,7 +129,7 @@ function loadQuestion() {
     const targetCategoryQuestions = categoriesData[activeCategoryName];
     const currentQuestionData = targetCategoryQuestions[currentQuestionIndex];
 
-    categoryIndicator.innerText = `📂 Category: ${activeCategoryName}`;
+    categoryIndicator.innerText = `📂 Kategori: ${activeCategoryName}`;
     document.getElementById('slide-title').innerText = `${currentQuestionData.title} (${currentQuestionIndex + 1}/${targetCategoryQuestions.length})`;
     document.getElementById('question-text').innerText = currentQuestionData.question;
     
@@ -189,7 +189,7 @@ function checkAnswer() {
             }
         }
     } else {
-        feedbackMessage.className = "incorrect";
+        feedbackMessage.className = "Forkert";
         feedbackMessage.innerText = "Svaret var desværre forkert... Prøv igen";
     }
 }
@@ -228,7 +228,7 @@ function showVictory() {
     quizScreen.classList.add('hidden');
     progressContainer.classList.add('hidden');
     victoryScreen.classList.remove('hidden');
-    finalScoreText.innerHTML = `Spectacular achievement! Every single category deciphered successfully!<br><strong>Grand Total: ${totalCorrectAnswers} / ${totalQuestionsCount} ⭐</strong>`;
+    finalScoreText.innerHTML = `Jesus I er cool!<br><strong>Grand Total: ${totalCorrectAnswers} / ${totalQuestionsCount} </strong>`;
     
     let duration = 6 * 1000;
     let end = Date.now() + duration;
@@ -252,7 +252,7 @@ function passQuestion() {
     currentQuestionIndex++;
 
     if (currentQuestionIndex < currentCategoryQuestions.length) {
-        feedbackMessage.className = "incorrect";
+        feedbackMessage.className = "Forkert";
         feedbackMessage.innerText = "Spørgsmål skipped...";
         setTimeout(loadQuestion, 1000);
     } else {
