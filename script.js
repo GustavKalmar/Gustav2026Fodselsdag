@@ -63,7 +63,7 @@ const categoriesData = {
 };
 
 // 🔑 THE BREAK BYPASS CODES
-const BREAK_UNLOCK_CODES = ["codeone", "codetwo", "codethree", "codefour"];
+const BREAK_UNLOCK_CODES = ["0u", "51st", "6ut", "63nun6"];
 
 // ==========================================
 // ⚙️ CATEGORY ENGINE LOGIC (DO NOT DELETE)
