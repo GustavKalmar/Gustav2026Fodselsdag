@@ -21,7 +21,7 @@ const categoriesData = {
         { title: "Hvor kom den lyd fra? - 6", question: "Fra hvilken film bliver dette sagt?", answer: "megamind", audio: "audio/queen-of-england.mp3" },
         { title: "Hvor kom den lyd fra? - 7", question: "Hvad hedder denne sang?", answer: "party in the usa", audio: "audio/partyintheusataken.mp3" },
         { title: "Hvor kom den lyd fra? - 8", question: "Hvilken spillekonsol komemr denne lyd fra?", answer: "wii", audio: "audio/nice-shot-wii-sports.mp3" },
-        { title: "Hvor kom den lyd fra? - 9", question: "Placeholder Question 9", answer: "test", audio: "audio/ringtone_20.mp3" },
+        { title: "Hvor kom den lyd fra? - 9", question: "Fra hvilken film bliver dette sagt", answer: "22 jump street", audio: "audio/ringtone_20.mp3" },
         { title: "Hvor kom den lyd fra? - 10", question: "Hvem har lavet denne sang?", answer: "duran duran", audio: "audio/hungrylikethewolftaken.mp3" }
     ],
     "Det var vidst ikke helt alt?": [
