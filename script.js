@@ -38,14 +38,14 @@ const categoriesData = {
     ],
     "Hvordan i helvede skulle jeg kunne vide det?": [
         { title: "Hvordan i helvede skulle jeg kunne vide det? - 1", question: "Hvor mange sorte tangenter er der på et klaver?", answer: "36", audio: "" },
-        { title: "Hvordan i helvede skulle jeg kunne vide det? - 2", question: "Hvilekt tal står der på papiret i saunaen?", answer: "835947", audio: "" },
+        { title: "Hvordan i helvede skulle jeg kunne vide det? - 2", question: "Hvilket tal står der på papiret i saunaen?", answer: "835947", audio: "" },
         { title: "Hvordan i helvede skulle jeg kunne vide det? - 3", question: "Kig på trampolinen... Hvor mange pæle stikker op?", answer: "test", audio: "" },
         { title: "Hvordan i helvede skulle jeg kunne vide det? - 4", question: "Hvis du har en sæk med 2 røde og 2 blå sokker. Du kan tage 1 sok op ad gangen. Hvor mange gange skal du tage sokker op, før du kan være sikker på du har et par af samme farve", answer: "3", audio: "" },
         { title: "Hvordan i helvede skulle jeg kunne vide det? - 5", question: "Hvor mange rammer (fx en billedramme) er der i multirummet", answer: "53", audio: "" },
-        { title: "Hvordan i helvede skulle jeg kunne vide det? - 6", question: "Placeholder Question 6", answer: "test", audio: "" },
-        { title: "Hvordan i helvede skulle jeg kunne vide det? - 7", question: "Placeholder Question 7", answer: "test", audio: "" },
-        { title: "Hvordan i helvede skulle jeg kunne vide det? - 8", question: "", answer: "", audio: "" },
-        { title: "Hvordan i helvede skulle jeg kunne vide det? - 9", question: "Placeholder Question 9", answer: "test", audio: "" },
+        { title: "Hvordan i helvede skulle jeg kunne vide det? - 6", question: "Hvor mange knapper er der på romaskinen?", answer: "8", audio: "" },
+        { title: "Hvordan i helvede skulle jeg kunne vide det? - 7", question: "Den 25 juni 2009, døde en meget kendt snager... Hvem?", answer: "michael jackson", audio: "" },
+        { title: "Hvordan i helvede skulle jeg kunne vide det? - 8", question: "Hvor mange billedkort er der i en kortspil?", answer: "12", audio: "" },
+        { title: "Hvordan i helvede skulle jeg kunne vide det? - 9", question: "Nu når jeg tager kørekort... Hvor lang, bred og høj må en bil være (svares i meter, hvor man skriver L, B, H)", answer: "12, 2,55, 4", audio: "" },
         { title: "Hvordan i helvede skulle jeg kunne vide det? - 10", question: "Hvad var nu tallet der stod i saunaen?", answer: "835947", audio: "" }
     ],
         "Jeg var sku ikke i skole den dag": [
