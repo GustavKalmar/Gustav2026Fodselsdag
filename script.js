@@ -54,7 +54,7 @@ const categoriesData = {
         { title: "Jeg var sku ikke i skole den dag - 3", question: "Hvem opfandt pencilin", answer: "alexander flemming", audio: "" },
         { title: "Jeg var sku ikke i skole den dag - 4", question: "Hvor mange Hz er midter A, eller A4 (på et klaver)", answer: "440", audio: "" },
         { title: "Jeg var sku ikke i skole den dag - 5", question: "Hvor mange ordklasser findes der i det danske sprog", answer: "1", audio: "" },
-        { title: "Jeg var sku ikke i skole den dag - 6", question: "Hvor mange grader er der i en sekskant, answer: "720", audio: "" },
+        { title: "Jeg var sku ikke i skole den dag - 6", question: "Hvor mange grader er der i en sekskant", answer: "720", audio: "" },
         { title: "Jeg var sku ikke i skole den dag - 7", question: "Hvor mange kvadratkilometer er danmark (runder op til nærmeste tusidne)", answer: "43000", audio: "" },
         { title: "Jeg var sku ikke i skole den dag - 8", question: "Hvad er hovedstaden i Belarus", answer: "minsk", audio: "" },
         { title: "Jeg var sku ikke i skole den dag - 9", question: "Hvilket år blev grundlovet indført", answer: "1849", audio: "" },
