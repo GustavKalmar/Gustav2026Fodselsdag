@@ -26,15 +26,15 @@ const categoriesData = {
     ],
     "Det var vidst ikke helt alt?": [
         { title: "Det var vidst ikke helt alt? - 1", question: "What is (12 * 4) - 6?", answer: "42", audio: "" },
-        { title: "Det var vidst ikke helt alt? - 2", question: "Next number in pattern: 2, 4, 8, 16...", answer: "32", audio: "" },
-        { title: "Det var vidst ikke helt alt? - 3", question: "Placeholder Question 3", answer: "test", audio: "" },
-        { title: "Det var vidst ikke helt alt? - 4", question: "Placeholder Question 4", answer: "test", audio: "" },
-        { title: "Det var vidst ikke helt alt? - 5", question: "Placeholder Question 5", answer: "test", audio: "" },
-        { title: "Det var vidst ikke helt alt? - 6", question: "Placeholder Question 6", answer: "test", audio: "" },
-        { title: "Det var vidst ikke helt alt? - 7", question: "Placeholder Question 7", answer: "test", audio: "" },
-        { title: "Det var vidst ikke helt alt? - 8", question: "Placeholder Question 8", answer: "test", audio: "" },
-        { title: "Det var vidst ikke helt alt? - 9", question: "Placeholder Question 9", answer: "test", audio: "" },
-        { title: "Det var vidst ikke helt alt? - 10", question: "Final Math Question!", answer: "test", audio: "" }
+        { title: "Det var vidst ikke helt alt? - 2", question: "Next number in pattern: 2, 4, 8, 16...", answer: "32", audio: "", image: "images/cars.jpg" },
+        { title: "Det var vidst ikke helt alt? - 3", question: "Placeholder Question 3", answer: "test", audio: "", image: "images/cars.jpg" },
+        { title: "Det var vidst ikke helt alt? - 4", question: "Placeholder Question 4", answer: "test", audio: "", image: "images/cars.jpg" },
+        { title: "Det var vidst ikke helt alt? - 5", question: "Placeholder Question 5", answer: "test", audio: "", image: "images/cars.jpg" },
+        { title: "Det var vidst ikke helt alt? - 6", question: "Placeholder Question 6", answer: "test", audio: "", image: "images/cars.jpg" },
+        { title: "Det var vidst ikke helt alt? - 7", question: "Placeholder Question 7", answer: "test", audio: "", image: "images/cars.jpg"},
+        { title: "Det var vidst ikke helt alt? - 8", question: "Placeholder Question 8", answer: "test", audio: "", image: "images/cars.jpg" },
+        { title: "Det var vidst ikke helt alt? - 9", question: "Placeholder Question 9", answer: "test", audio: "", image: "images/cars.jpg" },
+        { title: "Det var vidst ikke helt alt? - 10", question: "Final Math Question!", answer: "test", audio: "", image: "images/cars.jpg" }
     ],
     "Hvordan i helvede skulle jeg kunne vide det?": [
         { title: "Hvordan i helvede skulle jeg kunne vide det? - 1", question: "Hvor mange sorte tangenter er der på et klaver?", answer: "36", audio: "" },
@@ -137,15 +137,24 @@ function loadQuestion() {
     feedbackMessage.innerText = "";
     feedbackMessage.className = "";
 
-    // FIXED AUDIO LOGIC
+    // NEW IMAGE LOGIC
+    const questionImgElement = document.getElementById('question-image');
+    if (currentQuestionData.image && currentQuestionData.image !== "") {
+        questionImgElement.src = currentQuestionData.image;
+        questionImgElement.classList.remove('hidden'); // Show the image
+    } else {
+        questionImgElement.src = "";
+        questionImgElement.classList.add('hidden'); // Hide it if no image
+    }
+
+    // Audio setup
     const audioContainer = document.getElementById('audio-container');
     const gameAudio = document.getElementById('game-audio');
-    
     if (currentQuestionData.audio && currentQuestionData.audio !== "") {
-        gameAudio.pause(); // 1. Stop whatever was playing before
+        gameAudio.pause();
         document.getElementById('audio-source').src = currentQuestionData.audio;
-        gameAudio.load();  // 2. Load the fresh track file
-        gameAudio.currentTime = 0; // 3. Force the tracking pointer back to 0:00
+        gameAudio.load();
+        gameAudio.currentTime = 0;
         audioContainer.classList.remove('hidden');
     } else {
         gameAudio.pause();
