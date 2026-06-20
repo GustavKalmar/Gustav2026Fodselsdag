@@ -13,7 +13,7 @@ const categoriesData = {
         { title: "Hvem sagde nu det? - 10", question: "Final Riddle! What has keys but opens no locks?", answer: "piano", audio: "" }
     ],
     "Hvor kom den lyd fra?": [
-        { title: "Hvor kom den lyd fra? - 1", question: "What classic console boot sound is this?", answer: "playstation", audio: "audio/ps1.mp3" },
+        { title: "Hvor kom den lyd fra? - 1", question: "Fra hvilken film kommer denne sang fra?", answer: "biler", audio: "audio/Lyd1_guizz.mp3" },
         { title: "Hvor kom den lyd fra? - 2", question: "Identify this instrument track.", answer: "piano", audio: "audio/piano.mp3" },
         { title: "Hvor kom den lyd fra? - 3", question: "Placeholder Question 3", answer: "test", audio: "" },
         { title: "Hvor kom den lyd fra? - 4", question: "Placeholder Question 4", answer: "test", audio: "" },
