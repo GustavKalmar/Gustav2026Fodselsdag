@@ -129,7 +129,7 @@ function loadQuestion() {
     const targetCategoryQuestions = categoriesData[activeCategoryName];
     const currentQuestionData = targetCategoryQuestions[currentQuestionIndex];
 
-    categoryIndicator.innerText = `Kategori: ${activeCategoryName}`;
+    categoryIndicator.innerText = `📂 Category: ${activeCategoryName}`;
     document.getElementById('slide-title').innerText = `${currentQuestionData.title} (${currentQuestionIndex + 1}/${targetCategoryQuestions.length})`;
     document.getElementById('question-text').innerText = currentQuestionData.question;
     
@@ -137,11 +137,15 @@ function loadQuestion() {
     feedbackMessage.innerText = "";
     feedbackMessage.className = "";
 
+    // FIXED AUDIO LOGIC
     const audioContainer = document.getElementById('audio-container');
     const gameAudio = document.getElementById('game-audio');
+    
     if (currentQuestionData.audio && currentQuestionData.audio !== "") {
+        gameAudio.pause(); // 1. Stop whatever was playing before
         document.getElementById('audio-source').src = currentQuestionData.audio;
-        gameAudio.load();
+        gameAudio.load();  // 2. Load the fresh track file
+        gameAudio.currentTime = 0; // 3. Force the tracking pointer back to 0:00
         audioContainer.classList.remove('hidden');
     } else {
         gameAudio.pause();
