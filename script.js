@@ -36,17 +36,17 @@ const categoriesData = {
         { title: "Det var vidst ikke helt alt? - 9", question: "Placeholder Question 9", answer: "test", audio: "" },
         { title: "Det var vidst ikke helt alt? - 10", question: "Final Math Question!", answer: "test", audio: "" }
     ],
-    "Hvad fanden var nu det?": [
-        { title: "Hvad fanden var nu det? - 1", question: "What is the capital city of France?", answer: "paris", audio: "" },
-        { title: "Hvad fanden var nu det? - 2", question: "Hvilekt tal står der på papiret i saunaen?", answer: "835947", audio: "" },
-        { title: "Hvad fanden var nu det? - 3", question: "Placeholder Question 3", answer: "test", audio: "" },
-        { title: "Hvad fanden var nu det? - 4", question: "Placeholder Question 4", answer: "test", audio: "" },
-        { title: "Hvad fanden var nu det? - 5", question: "Hvor mange rammer (fx en billedramme) er der i multirummet", answer: "53", audio: "" },
-        { title: "Hvad fanden var nu det? - 6", question: "Placeholder Question 6", answer: "test", audio: "" },
-        { title: "Hvad fanden var nu det? - 7", question: "Placeholder Question 7", answer: "test", audio: "" },
-        { title: "Hvad fanden var nu det? - 8", question: "", answer: "", audio: "" },
-        { title: "Hvad fanden var nu det? - 9", question: "Placeholder Question 9", answer: "test", audio: "" },
-        { title: "Hvad fanden var nu det? - 10", question: "Hvad var nu tallet der stod i saunaen?", answer: "835947", audio: "" }
+    "Hvordan i helvede skulle jeg kunne vide det?": [
+        { title: "Hvordan i helvede skulle jeg kunne vide det? - 1", question: "Hvor mange sorte tangenter er der på et klaver?", answer: "36", audio: "" },
+        { title: "Hvordan i helvede skulle jeg kunne vide det? - 2", question: "Hvilekt tal står der på papiret i saunaen?", answer: "835947", audio: "" },
+        { title: "Hvordan i helvede skulle jeg kunne vide det? - 3", question: "Kig på trampolinen... Hvor mange pæle stikker op?", answer: "test", audio: "" },
+        { title: "Hvordan i helvede skulle jeg kunne vide det? - 4", question: "Hvis du har en sæk med 2 røde og 2 blå sokker. Du kan tage 1 sok op ad gangen. Hvor mange gange skal du tage sokker op, før du kan være sikker på du har et par af samme farve", answer: "3", audio: "" },
+        { title: "Hvordan i helvede skulle jeg kunne vide det? - 5", question: "Hvor mange rammer (fx en billedramme) er der i multirummet", answer: "53", audio: "" },
+        { title: "Hvordan i helvede skulle jeg kunne vide det? - 6", question: "Placeholder Question 6", answer: "test", audio: "" },
+        { title: "Hvordan i helvede skulle jeg kunne vide det? - 7", question: "Placeholder Question 7", answer: "test", audio: "" },
+        { title: "Hvordan i helvede skulle jeg kunne vide det? - 8", question: "", answer: "", audio: "" },
+        { title: "Hvordan i helvede skulle jeg kunne vide det? - 9", question: "Placeholder Question 9", answer: "test", audio: "" },
+        { title: "Hvordan i helvede skulle jeg kunne vide det? - 10", question: "Hvad var nu tallet der stod i saunaen?", answer: "835947", audio: "" }
     ],
         "Jeg var sku ikke i skole den dag": [
         { title: "Jeg var sku ikke i skole den dag - 1", question: "In what year did the Titanic sink?", answer: "1912", audio: "" },
