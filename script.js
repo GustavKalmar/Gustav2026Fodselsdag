@@ -39,7 +39,7 @@ const categoriesData = {
     "Hvordan i helvede skulle jeg kunne vide det?": [
         { title: "Hvordan i helvede skulle jeg kunne vide det? - 1", question: "Hvor mange sorte tangenter er der på et klaver?", answer: "36", audio: "" },
         { title: "Hvordan i helvede skulle jeg kunne vide det? - 2", question: "Hvilket tal står der på papiret i saunaen?", answer: "835947", audio: "" },
-        { title: "Hvordan i helvede skulle jeg kunne vide det? - 3", question: "Kig på trampolinen... Hvor mange pæle stikker op?", answer: "test", audio: "" },
+        { title: "Hvordan i helvede skulle jeg kunne vide det? - 3", question: "Kig på trampolinen... Hvor mange pæle stikker op?", answer: "6", audio: "" },
         { title: "Hvordan i helvede skulle jeg kunne vide det? - 4", question: "Hvis du har en sæk med 2 røde og 2 blå sokker. Du kan tage 1 sok op ad gangen. Hvor mange gange skal du tage sokker op, før du kan være sikker på du har et par af samme farve", answer: "3", audio: "" },
         { title: "Hvordan i helvede skulle jeg kunne vide det? - 5", question: "Hvor mange rammer (fx en billedramme) er der i multirummet", answer: "53", audio: "" },
         { title: "Hvordan i helvede skulle jeg kunne vide det? - 6", question: "Hvor mange knapper er der på romaskinen?", answer: "8", audio: "" },
@@ -49,16 +49,16 @@ const categoriesData = {
         { title: "Hvordan i helvede skulle jeg kunne vide det? - 10", question: "Hvad var nu tallet der stod i saunaen?", answer: "835947", audio: "" }
     ],
         "Jeg var sku ikke i skole den dag": [
-        { title: "Jeg var sku ikke i skole den dag - 1", question: "In what year did the Titanic sink?", answer: "1912", audio: "" },
-        { title: "Jeg var sku ikke i skole den dag - 2", question: "Who was the first president of the USA?", answer: "washington", audio: "" },
-        { title: "Jeg var sku ikke i skole den dag - 3", question: "Placeholder Question 3", answer: "test", audio: "" },
-        { title: "Jeg var sku ikke i skole den dag - 4", question: "Placeholder Question 4", answer: "test", audio: "" },
-        { title: "Jeg var sku ikke i skole den dag - 5", question: "Placeholder Question 5", answer: "test", audio: "" },
-        { title: "Jeg var sku ikke i skole den dag - 6", question: "Placeholder Question 6", answer: "test", audio: "" },
-        { title: "Jeg var sku ikke i skole den dag - 7", question: "Placeholder Question 7", answer: "test", audio: "" },
-        { title: "Jeg var sku ikke i skole den dag - 8", question: "Placeholder Question 8", answer: "test", audio: "" },
-        { title: "Jeg var sku ikke i skole den dag - 9", question: "Placeholder Question 9", answer: "test", audio: "" },
-        { title: "Jeg var sku ikke i skole den dag - 10", question: "Final History Question!", answer: "test", audio: "" }
+        { title: "Jeg var sku ikke i skole den dag - 1", question: "Hvad er hovedstaden i Australien?", answer: "canberra", audio: "" },
+        { title: "Jeg var sku ikke i skole den dag - 2", question: "Hvad hedder det kaffe der er lavet af lort", answer: "kopi luwak", audio: "" },
+        { title: "Jeg var sku ikke i skole den dag - 3", question: "Hvem opfandt pencilin", answer: "alexander flemming", audio: "" },
+        { title: "Jeg var sku ikke i skole den dag - 4", question: "Hvor mange Hz er midter A, eller A4 (på et klaver)", answer: "440", audio: "" },
+        { title: "Jeg var sku ikke i skole den dag - 5", question: "Hvor mange ordklasser findes der i det danske sprog", answer: "1", audio: "" },
+        { title: "Jeg var sku ikke i skole den dag - 6", question: "Hvor mange grader er der i en sekskant, answer: "720", audio: "" },
+        { title: "Jeg var sku ikke i skole den dag - 7", question: "Hvor mange kvadratkilometer er danmark (runder op til nærmeste tusidne)", answer: "43000", audio: "" },
+        { title: "Jeg var sku ikke i skole den dag - 8", question: "Hvad er hovedstaden i Belarus", answer: "minsk", audio: "" },
+        { title: "Jeg var sku ikke i skole den dag - 9", question: "Hvilket år blev grundlovet indført", answer: "1849", audio: "" },
+        { title: "Jeg var sku ikke i skole den dag - 10", question: "Under hvilken konge faldt Dannebrog", answer: "valdemar sejr", audio: "" }
     ]
 };
 
