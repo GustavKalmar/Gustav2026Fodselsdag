@@ -14,15 +14,15 @@ const categoriesData = {
     ],
     "Hvor kom den lyd fra?": [
         { title: "Hvor kom den lyd fra? - 1", question: "Fra hvilken film kommer denne sang fra?", answer: "biler", audio: "audio/Lyd1_guizz.mp3" },
-        { title: "Hvor kom den lyd fra? - 2", question: "Identify this instrument track.", answer: "piano", audio: "audio/piano.mp3" },
-        { title: "Hvor kom den lyd fra? - 3", question: "Placeholder Question 3", answer: "test", audio: "" },
-        { title: "Hvor kom den lyd fra? - 4", question: "Placeholder Question 4", answer: "test", audio: "" },
-        { title: "Hvor kom den lyd fra? - 5", question: "Placeholder Question 5", answer: "test", audio: "" },
-        { title: "Hvor kom den lyd fra? - 6", question: "Placeholder Question 6", answer: "test", audio: "" },
-        { title: "Hvor kom den lyd fra? - 7", question: "Placeholder Question 7", answer: "test", audio: "" },
-        { title: "Hvor kom den lyd fra? - 8", question: "Placeholder Question 8", answer: "test", audio: "" },
-        { title: "Hvor kom den lyd fra? - 9", question: "Placeholder Question 9", answer: "test", audio: "" },
-        { title: "Hvor kom den lyd fra? - 10", question: "Final Music Question!", answer: "test", audio: "" }
+        { title: "Hvor kom den lyd fra? - 2", question: "Hvilken aplikation kommer denne lyd fra?", answer: "kahoot", audio: "audio/kahoot-gong.mp3" },
+        { title: "Hvor kom den lyd fra? - 3", question: "Hvem har lavet denne sang?", answer: "the beatles", audio: "lomemedotake.mp3" },
+        { title: "Hvor kom den lyd fra? - 4", question: "Hvad er mærket, på det der bliver tændt?", answer: "nokia", audio: "nokia_startup.mp3" },
+        { title: "Hvor kom den lyd fra? - 5", question: "Hvilket musikintrument bliver spillet?", answer: "pauker", audio: "timpani.mp3" },
+        { title: "Hvor kom den lyd fra? - 6", question: "Fra hvilken film bliver dette sagt?", answer: "megamind", audio: "queen-of-england.mp3" },
+        { title: "Hvor kom den lyd fra? - 7", question: "Hvad hedder denne sang?", answer: "party in the usa", audio: "partyintheusataken.mp3" },
+        { title: "Hvor kom den lyd fra? - 8", question: "Hvilken spillekonsol komemr denne lyd fra?", answer: "wii", audio: "nice-shot-wii-sports.mp3" },
+        { title: "Hvor kom den lyd fra? - 9", question: "Placeholder Question 9", answer: "test", audio: "ringtone_20.mp3" },
+        { title: "Hvor kom den lyd fra? - 10", question: "Hvem har lavet denne sang?", answer: "duran duran", audio: "hungrylikethewolftaken.mp3" }
     ],
     "Det var vidst ikke helt alt?": [
         { title: "Det var vidst ikke helt alt? - 1", question: "What is (12 * 4) - 6?", answer: "42", audio: "" },
