@@ -30,7 +30,7 @@ const categoriesData = {
         { title: "Det var vidst ikke helt alt? - 3", question: "Hvilken film er dette?", answer: "titanic", audio: "", image: "images/titanic.jpg" },
         { title: "Det var vidst ikke helt alt? - 4", question: "Hvilken film er dette?", answer: "op", audio: "", image: "images/op.jpg" },
         { title: "Det var vidst ikke helt alt? - 5", question: "Hvilken film er dette?", answer: "harry potter", audio: "", image: "images/harrypotter.jpg" },
-        { title: "Det var vidst ikke helt alt? - 6", question: "Hvilken film er dette?", answer: "det regner med frikadeller", audio: "", image: "images/detregner.jpg" },
+        { title: "Det var vidst ikke helt alt? - 6", question: "Hvilken film er dette?", answer: "det regner med frikadeller", audio: "", image: "images/derregner.jpg" },
         { title: "Det var vidst ikke helt alt? - 7", question: "Hvilken film er dette?", answer: "paddington", audio: "", image: "images/paddington.jpg"},
         { title: "Det var vidst ikke helt alt? - 8", question: "Hvilken film er dette?", answer: "shrek", audio: "", image: "images/shrek.jpg" },
         { title: "Det var vidst ikke helt alt? - 9", question: "Hvilken film er dette?", answer: "the godfather", audio: "", image: "images/thegodfather.jpg" },
