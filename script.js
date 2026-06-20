@@ -38,27 +38,27 @@ const categoriesData = {
     ],
     "Hvad fanden var nu det?": [
         { title: "Hvad fanden var nu det? - 1", question: "What is the capital city of France?", answer: "paris", audio: "" },
-        { title: "Hvad fanden var nu det? - 2", question: "Which ocean is the largest on Earth?", answer: "pacific", audio: "" },
+        { title: "Hvad fanden var nu det? - 2", question: "Hvilekt tal står der på papiret i saunaen?", answer: "835947", audio: "" },
         { title: "Hvad fanden var nu det? - 3", question: "Placeholder Question 3", answer: "test", audio: "" },
         { title: "Hvad fanden var nu det? - 4", question: "Placeholder Question 4", answer: "test", audio: "" },
-        { title: "Hvad fanden var nu det? - 5", question: "Placeholder Question 5", answer: "test", audio: "" },
+        { title: "Hvad fanden var nu det? - 5", question: "Hvor mange rammer (fx en billedramme) er der i multirummet", answer: "53", audio: "" },
         { title: "Hvad fanden var nu det? - 6", question: "Placeholder Question 6", answer: "test", audio: "" },
         { title: "Hvad fanden var nu det? - 7", question: "Placeholder Question 7", answer: "test", audio: "" },
-        { title: "Hvad fanden var nu det? - 8", question: "Placeholder Question 8", answer: "test", audio: "" },
+        { title: "Hvad fanden var nu det? - 8", question: "", answer: "", audio: "" },
         { title: "Hvad fanden var nu det? - 9", question: "Placeholder Question 9", answer: "test", audio: "" },
-        { title: "Hvad fanden var nu det? - 10", question: "Final Geography Question!", answer: "test", audio: "" }
+        { title: "Hvad fanden var nu det? - 10", question: "Hvad var nu tallet der stod i saunaen?", answer: "835947", audio: "" }
     ],
-        "Random ball knowledge": [
-        { title: "Random ball knowledge - 1", question: "In what year did the Titanic sink?", answer: "1912", audio: "" },
-        { title: "Random ball knowledge - 2", question: "Who was the first president of the USA?", answer: "washington", audio: "" },
-        { title: "Random ball knowledge - 3", question: "Placeholder Question 3", answer: "test", audio: "" },
-        { title: "Random ball knowledge - 4", question: "Placeholder Question 4", answer: "test", audio: "" },
-        { title: "Random ball knowledge - 5", question: "Placeholder Question 5", answer: "test", audio: "" },
-        { title: "Random ball knowledge - 6", question: "Placeholder Question 6", answer: "test", audio: "" },
-        { title: "Random ball knowledge - 7", question: "Placeholder Question 7", answer: "test", audio: "" },
-        { title: "Random ball knowledge - 8", question: "Placeholder Question 8", answer: "test", audio: "" },
-        { title: "Random ball knowledge - 9", question: "Placeholder Question 9", answer: "test", audio: "" },
-        { title: "Random ball knowledge - 10", question: "Final History Question!", answer: "test", audio: "" }
+        "Jeg var sku ikke i skole den dag": [
+        { title: "Jeg var sku ikke i skole den dag - 1", question: "In what year did the Titanic sink?", answer: "1912", audio: "" },
+        { title: "Jeg var sku ikke i skole den dag - 2", question: "Who was the first president of the USA?", answer: "washington", audio: "" },
+        { title: "Jeg var sku ikke i skole den dag - 3", question: "Placeholder Question 3", answer: "test", audio: "" },
+        { title: "Jeg var sku ikke i skole den dag - 4", question: "Placeholder Question 4", answer: "test", audio: "" },
+        { title: "Jeg var sku ikke i skole den dag - 5", question: "Placeholder Question 5", answer: "test", audio: "" },
+        { title: "Jeg var sku ikke i skole den dag - 6", question: "Placeholder Question 6", answer: "test", audio: "" },
+        { title: "Jeg var sku ikke i skole den dag - 7", question: "Placeholder Question 7", answer: "test", audio: "" },
+        { title: "Jeg var sku ikke i skole den dag - 8", question: "Placeholder Question 8", answer: "test", audio: "" },
+        { title: "Jeg var sku ikke i skole den dag - 9", question: "Placeholder Question 9", answer: "test", audio: "" },
+        { title: "Jeg var sku ikke i skole den dag - 10", question: "Final History Question!", answer: "test", audio: "" }
     ]
 };
 
